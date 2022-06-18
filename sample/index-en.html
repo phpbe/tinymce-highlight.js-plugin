@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TinyMCE HighLight.js Plugin</title>
+
+    <script type="text/javascript" src="tinymce.min.js"></script>
+    <script type="text/javascript" src="plugins/becodesample/highlight.js-11.5.1/highlight.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#demo',
+            plugins : 'becodesample code',
+            toolbar: "becodesample code",
+            content_css: "plugins/becodesample/highlight.js-11.5.1/styles/atom-one-light.css",
+            height: '600',
+            init_instance_callback: function (editor) {
+                let content = '';
+
+                content += '<h2>First download the whole "becodesample" folder under src, put in tinymce plugins folder</h2>';
+
+                content += '<h2>Then start your project</h2>';
+
+                content += '<h2>1. import tinymce library</h2>';
+                content += '<pre><code>' +
+                    '&lt;script type="text/javascript" src="tinymce.min.js"&gt;&lt;/script&gt;\n' +
+                    '</code></pre>';
+
+                content += '<h2>2. import highlight js library</h2>';
+                content += '<pre><code>' +
+                    '&lt;script type="text/javascript" src="plugins/becodesample/highlight.js-11.5.1/highlight.min.js"&gt;&lt;/script&gt;\n' +
+                    '</code></pre>';
+
+                content += '<h2>3. init editor, the highlight plugin named "becodesample"</h2>';
+                content += '<pre><code class="language-javascript">' +
+                    '&lt;script type="text/javascript"&gt;\n' +
+                    '    tinymce.init({\n' +
+                    '        selector: \'#demo\',\n' +
+                    '        plugins : \'becodesample code\',\n' +
+                    '        toolbar: "becodesample code",\n' +
+                    '        content_css: "plugins/becodesample/highlight.js-11.5.1/styles/atom-one-light.css",\n' +
+                    '        height: \'600\'\n' +
+                    '    });\n' +
+                    '&lt;/script&gt;\n' +
+                    '</code></pre>';
+
+                content += '<p>content_css effect on the editor inside code</p>';
+
+                editor.setContent(content);
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+<div style="padding: 1rem; text-align: center"><a href="index.html">中文示例</a></div>
+
+<textarea id="demo"></textarea>
+
+</body>
+</html>
